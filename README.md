@@ -8,7 +8,7 @@ To install `wk` copy the script to any directory in your PATH.
 
 ## Setup
 
-For any workspace that needs workspace specific scripts run, create a `.wk` script with the necessary commands. For instance, setting your GOPATH in the root directory of a Go workspace:
+For any workspace that needs workspace specific scripts run, create a an executable script named `.wk` in the root directory of the workspace. For instance, to set your GOPATH you would add the following `.wk` file in the root directory of a Go workspace:
 
 ```
 #!/bin/bash
@@ -33,3 +33,9 @@ $ wk go build .
 ### WKDIR
 
 `wk` sets a special environment variable for `.wk` scripts called `WKDIR`. This variable provides a unique directory inside of the user's home directory to store workspace specific files.
+
+## Future Work
+
+- Set up a shell to automatically run `wk` by default.
+- Allow post-command cleanup actions in .wk scripts.
+- World domination.
