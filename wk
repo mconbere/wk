@@ -26,8 +26,8 @@ fi
 
 for (( idx=${#wkdirs[@]}-1; idx >= 0; idx-- )); do
   dir="${wkdirs[idx]}"
-  mkdir -p "$HOME/.wk$dir"
-  WKDIR="$HOME/.wk$dir"
+  mkdir -p "$HOME/.wkdir$dir"
+  WKDIR="$HOME/.wkdir$dir"
 
   pushd "$dir" > /dev/null
   source ".wk"
