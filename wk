@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# wk sets up your workspace automatically. It works by recursing up the directory tree
+# from PWD to root looking for files named .wk. It sources these shell scripts
+# in order from root to PWD, building up a new environment. It then executes
+# any commands following the wk command in this new environment.
+#
+# Usual use:
+#   $ wk go run ..
+
+runsub="$1"
+dir=$(pwd)
+
+wkdirs=()
+while [[ "$dir" != "/" ]]; do
+  if [[ -f "$dir/.wk" ]]; then
+    wkdirs=("${wkdirs[@]}" "$dir")
+  fi
+	dir="$(dirname $dir)"
+done
+
+if [[ "${#wkdirs}" == "0" ]]; then
+	echo "Err: no .wk found" >&2
+	exit 1
+fi
+
+for (( idx=${#wkdirs[@]}-1; idx >= 0; idx-- )); do
+  dir="${wkdirs[idx]}"
+  mkdir -p "$HOME/.wk$dir"
+  WKDIR="$HOME/.wk$dir"
+
+  pushd "$dir" > /dev/null
+  source ".wk"
+  popd > /dev/null
+done
+
+if [[ -n "$runsub" ]]; then
+	"$@"
+fi
