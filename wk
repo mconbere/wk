@@ -5,7 +5,7 @@
 # in order from root to PWD, building up a new environment. It then executes
 # any commands following the wk command in this new environment.
 #
-# Usual use:
+# Example use:
 #   $ wk go run ..
 
 runsub="$1"
