@@ -1,10 +1,10 @@
 # wk
 
-**wk** is a simple commandline tool to automatically set up a workspace. Instead of maintaining global environment variables in a complex `.bashrc`, **wk** allows you to create a `.wk` script in a directory and just the environment variables from the directory you are in will be set.
+**wk** is a simple commandline tool to automatically set up a workspace. Instead of maintaining global environment variables in a complex `.bashrc`, **wk** allows you to create a `.wk` script in a workspace directory that sets only the necessary environment variables. 
 
 ## Install
 
-To install **wk** copy the script to any directory in your PATH.
+To install **wk** copy the script to any directory in your `PATH`. It's a relatively simple Bash script.
 
 ## Setup
 
