@@ -1,10 +1,10 @@
 # wk
 
-`wk` is a simple commandline tool to automatically set up a workspace. Instead of maintaining global environment variables in a complex `.bashrc`, `wk` allows you to create a `.wk` script in a directory and just the environment variables from the directory you are in will be set.
+**wk** is a simple commandline tool to automatically set up a workspace. Instead of maintaining global environment variables in a complex `.bashrc`, **wk** allows you to create a `.wk` script in a directory and just the environment variables from the directory you are in will be set.
 
 ## Install
 
-To install `wk` copy the script to any directory in your PATH.
+To install **wk** copy the script to any directory in your PATH.
 
 ## Setup
 
@@ -18,7 +18,7 @@ export GOPATH=$PWD
 
 ## Usage
 
-To use `wk`, simply prepend any command you normally run with `wk`. It will execute the remaining command line arguments after it runs the setup scripts.
+To use **wk**, simply prepend any command you normally run with `wk`. It will execute the remaining command line arguments after it runs the setup scripts.
 
 ```
 $ wk go build .
@@ -28,11 +28,11 @@ $ wk go build .
 
 ### Nested workspaces
 
-`wk` allows nested workspaces. All directories from root to your current working directory are inspected for `.wk` files, and they are executed in order.
+**wk** allows nested workspaces. All directories from root to your current working directory are inspected for `.wk` files, and they are executed in order.
 
 ### WKDIR
 
-`wk` sets a special environment variable for `.wk` scripts called `WKDIR`. This variable provides a unique directory inside of the user's home directory to store workspace specific files.
+**wk** sets a special environment variable for `.wk` scripts called `WKDIR`. This variable provides a unique directory inside of the user's home directory to store workspace specific files.
 
 ## Future Work
 
